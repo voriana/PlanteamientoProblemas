@@ -10,9 +10,31 @@ namespace Veterinaria.BibliotecaClases.Entidades
     {
         //atributo de clase
         private DateTime _fecha;
+        private int _registroNro;
         private string _tipoServicio;
         private float _monto;
         private int _clienteId;
         private int _mascotaId;
+
+
+
+        //Metodo que retorna el atributo _registroNro
+        public string RegistroNro
+        {
+            get
+            {
+                return _registroNro;
+            }
+        }
+
+        //Metodo que modifica estado de atributo _registroNro
+        public void IncrementarRegistro()
+        {
+            _registroNro++;
+        }
+
+
+
+
     }
 }

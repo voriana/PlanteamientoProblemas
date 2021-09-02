@@ -1,0 +1,2 @@
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.BibliotecaClases\obj\Debug\Veterinaria.BibliotecaClases.csproj.AssemblyReference.cache
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.BibliotecaClases\obj\Debug\Veterinaria.BibliotecaClases.csproj.CoreCompileInputs.cache

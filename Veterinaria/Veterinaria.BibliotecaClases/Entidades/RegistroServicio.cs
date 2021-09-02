@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Veterinaria.BibliotecaClases.Entidades
 {
-    public class RegistroServicio
+    class RegistroServicio
     {
         //atributo de clase
         private DateTime _fecha;
@@ -19,7 +19,7 @@ namespace Veterinaria.BibliotecaClases.Entidades
 
 
         //Metodo que retorna el atributo _registroNro
-        public string RegistroNro
+        public int RegistroNro
         {
             get
             {
@@ -32,9 +32,6 @@ namespace Veterinaria.BibliotecaClases.Entidades
         {
             _registroNro++;
         }
-
-
-
 
     }
 }

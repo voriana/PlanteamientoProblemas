@@ -14,7 +14,8 @@ namespace Veterinaria.BibliotecaClases.Entidades
         private string _especie;
         private string _raza;
         private float _peso;
-        private DateTime _edad;
+        private DateTime _fechaNacimiento;
+        private EsquemaVacunacion vacunas;
 
         //propiedades (getters y setters)
         public int IdMascota
@@ -87,6 +88,31 @@ namespace Veterinaria.BibliotecaClases.Entidades
             set
             {
                 _edad = value;
+            }
+        }
+
+
+        /*
+         * /Quiero que este metodo evalue si la mascota tiene 6 semanas 
+         * (nose como comparar la fecha actual por meses con la fecha de nacimiento
+         * Si la mascota esta edad de vacunarse (1 mes o mas) cree una instacia de esquema de vacunacion
+         * sino que devuelva que esta muy pequeño
+         * 
+         */
+
+        public void CrearVacunas()
+        {
+            if (_edad == (DateTime.Now.Day - _fechaNacimiento.Day >= 1))
+            {
+               
+                
+                EsquemaVacunacion e=new EsquemaVacunacion(DateTime.Now,"Pavovirus");
+                e.cantidadDosis();
+
+            }
+            else if (DateTime.Now.Month - _fechaNacimiento.Month < 1)
+            {
+                Console.WriteLine("Aun es muy pequeño para vacunarse");
             }
         }
     }

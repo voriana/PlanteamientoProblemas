@@ -15,8 +15,49 @@ namespace Veterinaria.BibliotecaClases.Entidades
         private string _raza;
         private float _peso;
         private DateTime _fechaNacimiento;
-        private EsquemaVacunacion vacunas;
+        private List<Vacuna> _vacunasAplicadas;
 
+        //constructor vacio 
+        public FichaMascota()
+        {
+           
+
+        }
+
+        //constructor con parametros
+        public FichaMascota(int id, string nombre, string especie, string raza, float peso, DateTime fecha, List<Vacuna> vacuna)
+        {
+            _idMascota = id;
+            _nombre = nombre;
+            _especie = especie;
+            _raza = raza;
+            _peso = peso;
+            _fechaNacimiento = fecha;
+            _vacunasAplicadas = vacuna;
+            
+
+        }
+
+       public void AgregarVacunas(List<Vacuna> v)
+       {
+            _vacunasAplicadas = v;
+       }
+
+        //sub rutina para asignar solicitar datos por consola y asiganarle valor a los atributos
+        public void AgregarMascota()
+        {
+            IdMascota = _idMascota++;
+            Nombre = Utilidades.SolicitudDatos.ValidarCadena("Ingrese nombre de la mascota");
+            Especie = Utilidades.SolicitudDatos.ValidarCadena("Ingrese especie de la mascota");
+            Raza = Utilidades.SolicitudDatos.ValidarCadena("Ingrese raza de la mascota");
+            Peso = Utilidades.SolicitudDatos.ValidarNumerico("Ingrese Peso de la mascota");
+            FechaNac = Utilidades.SolicitudDatos.ValidarFecha("Ingrese Fecha");
+
+            
+
+        }
+
+       
         //propiedades (getters y setters)
         public int IdMascota
         {
@@ -30,7 +71,7 @@ namespace Veterinaria.BibliotecaClases.Entidades
                 _idMascota = value;
             }
         }
-        public string nombre
+        public string Nombre
         {
             get
             {
@@ -41,7 +82,7 @@ namespace Veterinaria.BibliotecaClases.Entidades
                 _nombre = value;
             }
         }
-        public string especie
+        public string Especie
         {
             get
             {
@@ -55,7 +96,7 @@ namespace Veterinaria.BibliotecaClases.Entidades
             }
 
         }
-        public string raza
+        public string Raza
         {
             get
             {
@@ -67,7 +108,7 @@ namespace Veterinaria.BibliotecaClases.Entidades
             }
         }
 
-        public float peso
+        public float Peso
         {
             get
             {
@@ -78,42 +119,52 @@ namespace Veterinaria.BibliotecaClases.Entidades
                 _peso = value;
             }
         }
-        public DateTime edad
+        public DateTime FechaNac
         {
             get
             {
-                return _edad;
+                return _fechaNacimiento;
 
             }
             set
             {
-                _edad = value;
+                _fechaNacimiento = value;
             }
         }
-
-
-        /*
-         * /Quiero que este metodo evalue si la mascota tiene 6 semanas 
-         * (nose como comparar la fecha actual por meses con la fecha de nacimiento
-         * Si la mascota esta edad de vacunarse (1 mes o mas) cree una instacia de esquema de vacunacion
-         * sino que devuelva que esta muy pequeño
-         * 
-         */
-
-        public void CrearVacunas()
+        public string DatosFicha()
         {
-            if (_edad == (DateTime.Now.Day - _fechaNacimiento.Day >= 1))
-            {
-               
-                
-                EsquemaVacunacion e=new EsquemaVacunacion(DateTime.Now,"Pavovirus");
-                e.cantidadDosis();
+            return "Nombre: " + Nombre + Environment.NewLine + "Especie:" + Especie + Environment.NewLine +
+                "Raza: " + Raza + Environment.NewLine + "Fecha de naciemiento:" + FechaNac + Environment.NewLine +
+                "Peso: "+Peso+Environment.NewLine+"Vacunas:\n" + ListaVacuna(_vacunasAplicadas) ;
+                      
+        }
 
-            }
-            else if (DateTime.Now.Month - _fechaNacimiento.Month < 1)
+        public string ListaVacuna(List<Vacuna> v)
+        {
+            string cadena="";
+            foreach (var item in v)
             {
-                Console.WriteLine("Aun es muy pequeño para vacunarse");
+                cadena += item.DetallarVacuna()+" -";
+            }
+            if (string.IsNullOrEmpty(cadena))
+            {
+                return "No tiene vacunas en su ficha";
+            }
+            else
+            {
+                return cadena;
             }
         }
+      
+        public List<Vacuna> Vacunas
+        {
+            get
+            {
+                return _vacunasAplicadas;
+
+                
+            }
+        }
+
     }
 }

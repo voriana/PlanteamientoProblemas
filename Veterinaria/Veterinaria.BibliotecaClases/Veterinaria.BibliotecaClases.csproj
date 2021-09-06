@@ -41,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EsquemaVacunacion.cs" />
     <Compile Include="Entidades\FichaMascota.cs" />
     <Compile Include="Entidades\HistoriaClinica.cs" />
-    <Compile Include="Entidades\PagoConsulta.cs" />
+    <Compile Include="Entidades\RegistroServicio.cs" />
+    <Compile Include="Entidades\Vacuna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\Tratamiento.cs" />
+    <Compile Include="Utilidades\Menu.cs" />
+    <Compile Include="Utilidades\SolicitudDatos.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

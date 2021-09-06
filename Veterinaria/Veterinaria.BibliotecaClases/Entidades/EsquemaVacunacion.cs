@@ -10,55 +10,62 @@ namespace Veterinaria.BibliotecaClases.Entidades
     {
         //atributos de clase
         private DateTime _fechaAplicacion;
-        private string _nombreVacuna;
-        private int _nroDosis;
+        private List<Vacuna> _vacunas;
 
-        public EsquemaVacunacion (DateTime fecha, string nombreVacuna)
+        public EsquemaVacunacion()
+        {
+
+        }
+
+        public EsquemaVacunacion (DateTime fecha, List<Vacuna> vacunas)
         {
             _fechaAplicacion=fecha;
-            _nombreVacuna=nombreVacuna;
+            _vacunas = vacunas;
+        }
+
+        //Vacunas basicas para caninos
+        public void VacunasCaninas()
+        {
+            Vacuna v1 = new Vacuna("Parvovirus", "Canina");
+            Vacuna v2 = new Vacuna("Rabia", "Canina");
+            Vacuna v3 = new Vacuna("Moquillo", "Canina");
+            _vacunas.Add(v1);
+            _vacunas.Add(v2);
+            _vacunas.Add(v3);
+
+        }
+
+
+
+            public EsquemaVacunacion AgregarEsquema()
+        {
+            VacunasCaninas();
+            EsquemaVacunacion e = new EsquemaVacunacion(DateTime.Now, _vacunas);
+            return e;
         }
 
         //Quisiera que este metodo cambiara el estado de el atributo _nroDosis
         //(no se si es correcto que  lo modifique segun el valor que tenga otro atributo)
-        public void cantidadDosis()
+        public void cantidadDosis(Vacuna nombre)
         {
-            if (_nombreVacuna.Equals("parvovirus"))
+            foreach (var item in _vacunas)
             {
-                _nroDosis=4;
+                if (!item.Equals(nombre))
+                {
+                    Console.WriteLine("No existe una vacuna con ese nombre");
 
-            }else if (_nombreVacuna.Equals("rabia"))
-            {
-                nroDosis=3;
-            }
-          
-
-        }
-
-
-        //Metodo que su comportamiento se ve modificado por el valor de un atributo
-        public void EstadoEsquema()
-        {
-            if(_nombreVacuna.Equals("Pavovirus"))
-            {
+                }if (nombre.Equals ("Parvovirus")|| nombre.Equals("Rabia")|| nombre.Equals("Moquillo"))
+                {
+                    
+                }
                 
-                if (_nroDosis < 4)
-                {
-                    Console.WriteLine("Cantidad de dosis restantes de Pavovirus"+ (4 - _nroDosis));
-                }else
-                {
-                    Console.WriteLine("Esquema Terminado");
-                }
-            }else if (_nombreVacuna.Equals("Rabia"))
-            {
-                if (_nroDosis < 3)
-                {
-                    Console.WriteLine("Cantidad de dosis restantes de Pavovirus"+ (3 - _nroDosis));
-                }else
-                {
-                    Console.WriteLine("Esquema Terminado");
-                }
+
             }
+
         }
+
+
+        
+        
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\obj\Debug\Veterinaria.Console.csproj.AssemblyReference.cache
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\obj\Debug\Veterinaria.Console.csproj.CoreCompileInputs.cache
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\bin\Debug\Veterinaria.Console.exe.config
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\bin\Debug\Veterinaria.Console.exe
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\bin\Debug\Veterinaria.Console.pdb
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\bin\Debug\Veterinaria.BibliotecaClases.dll
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\bin\Debug\Veterinaria.BibliotecaClases.pdb
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\obj\Debug\Veterinaria.Console.csproj.CopyComplete
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\obj\Debug\Veterinaria.Console.exe
+C:\Users\orian\Documents\GitHub\PlanteamientoProblemas\PlanteamientoProblemas\Veterinaria\Veterinaria.Console\obj\Debug\Veterinaria.Console.pdb
